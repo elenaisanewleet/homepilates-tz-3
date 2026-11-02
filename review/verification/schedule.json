@@ -1,0 +1,25 @@
+{
+  "docs": [
+    [
+      "r308687.mobi.fitness",
+      "/",
+      301
+    ],
+    [
+      "mobi.fitness",
+      "/widget/demo/rasp/308687",
+      200
+    ],
+    [
+      "mobi.fitness",
+      "/schedule-widget/",
+      200
+    ]
+  ],
+  "seenScheduleContent": true,
+  "frames": [
+    "http://127.0.0.1:8247/raspisanie/",
+    "https://mobi.fitness/widget/demo/rasp/308687",
+    "https://mobi.fitness/schedule-widget/"
+  ]
+}

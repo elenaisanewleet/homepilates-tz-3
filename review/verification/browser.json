@@ -1,0 +1,505 @@
+{
+  "widths": [
+    {
+      "page": "/",
+      "width": 320,
+      "scroll": 320,
+      "tableOverflow": false
+    },
+    {
+      "page": "napravleniya",
+      "width": 320,
+      "scroll": 320,
+      "tableOverflow": false
+    },
+    {
+      "page": "raspisanie",
+      "width": 320,
+      "scroll": 320,
+      "tableOverflow": false
+    },
+    {
+      "page": "stoimost",
+      "width": 320,
+      "scroll": 320,
+      "tableOverflow": false
+    },
+    {
+      "page": "komanda",
+      "width": 320,
+      "scroll": 320,
+      "tableOverflow": false
+    },
+    {
+      "page": "faq",
+      "width": 320,
+      "scroll": 320,
+      "tableOverflow": false
+    },
+    {
+      "page": "sertifikaty",
+      "width": 320,
+      "scroll": 320,
+      "tableOverflow": false
+    },
+    {
+      "page": "kontakty",
+      "width": 320,
+      "scroll": 320,
+      "tableOverflow": false
+    },
+    {
+      "page": "/",
+      "width": 390,
+      "scroll": 390,
+      "tableOverflow": false
+    },
+    {
+      "page": "napravleniya",
+      "width": 390,
+      "scroll": 390,
+      "tableOverflow": false
+    },
+    {
+      "page": "raspisanie",
+      "width": 390,
+      "scroll": 390,
+      "tableOverflow": false
+    },
+    {
+      "page": "stoimost",
+      "width": 390,
+      "scroll": 390,
+      "tableOverflow": false
+    },
+    {
+      "page": "komanda",
+      "width": 390,
+      "scroll": 390,
+      "tableOverflow": false
+    },
+    {
+      "page": "faq",
+      "width": 390,
+      "scroll": 390,
+      "tableOverflow": false
+    },
+    {
+      "page": "sertifikaty",
+      "width": 390,
+      "scroll": 390,
+      "tableOverflow": false
+    },
+    {
+      "page": "kontakty",
+      "width": 390,
+      "scroll": 390,
+      "tableOverflow": false
+    },
+    {
+      "page": "/",
+      "width": 768,
+      "scroll": 768,
+      "tableOverflow": false
+    },
+    {
+      "page": "napravleniya",
+      "width": 768,
+      "scroll": 768,
+      "tableOverflow": false
+    },
+    {
+      "page": "raspisanie",
+      "width": 768,
+      "scroll": 768,
+      "tableOverflow": false
+    },
+    {
+      "page": "stoimost",
+      "width": 768,
+      "scroll": 768,
+      "tableOverflow": false
+    },
+    {
+      "page": "komanda",
+      "width": 768,
+      "scroll": 768,
+      "tableOverflow": false
+    },
+    {
+      "page": "faq",
+      "width": 768,
+      "scroll": 768,
+      "tableOverflow": false
+    },
+    {
+      "page": "sertifikaty",
+      "width": 768,
+      "scroll": 768,
+      "tableOverflow": false
+    },
+    {
+      "page": "kontakty",
+      "width": 768,
+      "scroll": 768,
+      "tableOverflow": false
+    },
+    {
+      "page": "/",
+      "width": 1024,
+      "scroll": 1024,
+      "tableOverflow": false
+    },
+    {
+      "page": "napravleniya",
+      "width": 1024,
+      "scroll": 1024,
+      "tableOverflow": false
+    },
+    {
+      "page": "raspisanie",
+      "width": 1024,
+      "scroll": 1024,
+      "tableOverflow": false
+    },
+    {
+      "page": "stoimost",
+      "width": 1024,
+      "scroll": 1024,
+      "tableOverflow": false
+    },
+    {
+      "page": "komanda",
+      "width": 1024,
+      "scroll": 1024,
+      "tableOverflow": false
+    },
+    {
+      "page": "faq",
+      "width": 1024,
+      "scroll": 1024,
+      "tableOverflow": false
+    },
+    {
+      "page": "sertifikaty",
+      "width": 1024,
+      "scroll": 1024,
+      "tableOverflow": false
+    },
+    {
+      "page": "kontakty",
+      "width": 1024,
+      "scroll": 1024,
+      "tableOverflow": false
+    },
+    {
+      "page": "/",
+      "width": 1440,
+      "scroll": 1440,
+      "tableOverflow": false
+    },
+    {
+      "page": "napravleniya",
+      "width": 1440,
+      "scroll": 1440,
+      "tableOverflow": false
+    },
+    {
+      "page": "raspisanie",
+      "width": 1440,
+      "scroll": 1440,
+      "tableOverflow": false
+    },
+    {
+      "page": "stoimost",
+      "width": 1440,
+      "scroll": 1440,
+      "tableOverflow": false
+    },
+    {
+      "page": "komanda",
+      "width": 1440,
+      "scroll": 1440,
+      "tableOverflow": false
+    },
+    {
+      "page": "faq",
+      "width": 1440,
+      "scroll": 1440,
+      "tableOverflow": false
+    },
+    {
+      "page": "sertifikaty",
+      "width": 1440,
+      "scroll": 1440,
+      "tableOverflow": false
+    },
+    {
+      "page": "kontakty",
+      "width": 1440,
+      "scroll": 1440,
+      "tableOverflow": false
+    }
+  ],
+  "keyboard": [
+    "Skip link reaches main",
+    "Menu opens with Space and Escape restores focus",
+    "Gallery advances",
+    "FAQ expands",
+    "7 pricing groups toggle with Space"
+  ],
+  "mobileMenu": [
+    {
+      "from": "/",
+      "to": "/",
+      "method": "Enter + Tab + Enter",
+      "title": "Главная — HomePilates"
+    },
+    {
+      "from": "/",
+      "to": "napravleniya",
+      "method": "Enter + Tab + Enter",
+      "title": "Направления — HomePilates"
+    },
+    {
+      "from": "/",
+      "to": "raspisanie",
+      "method": "Enter + Tab + Enter",
+      "title": "Расписание — HomePilates"
+    },
+    {
+      "from": "/",
+      "to": "stoimost",
+      "method": "Enter + Tab + Enter",
+      "title": "Стоимость — HomePilates"
+    },
+    {
+      "from": "/",
+      "to": "komanda",
+      "method": "Enter + Tab + Enter",
+      "title": "Команда — HomePilates"
+    },
+    {
+      "from": "/",
+      "to": "faq",
+      "method": "Enter + Tab + Enter",
+      "title": "FAQ — HomePilates"
+    },
+    {
+      "from": "/",
+      "to": "sertifikaty",
+      "method": "Enter + Tab + Enter",
+      "title": "Подарочные сертификаты — HomePilates"
+    },
+    {
+      "from": "/",
+      "to": "kontakty",
+      "method": "Enter + Tab + Enter",
+      "title": "Контакты — HomePilates"
+    }
+  ],
+  "localLinks": [
+    {
+      "path": "/#content",
+      "status": 200
+    },
+    {
+      "path": "/index.html",
+      "status": 200
+    },
+    {
+      "path": "/napravleniya/index.html",
+      "status": 200
+    },
+    {
+      "path": "/raspisanie/index.html",
+      "status": 200
+    },
+    {
+      "path": "/stoimost/index.html",
+      "status": 200
+    },
+    {
+      "path": "/komanda/index.html",
+      "status": 200
+    },
+    {
+      "path": "/faq/index.html",
+      "status": 200
+    },
+    {
+      "path": "/sertifikaty/index.html",
+      "status": 200
+    },
+    {
+      "path": "/kontakty/index.html",
+      "status": 200
+    },
+    {
+      "path": "/index.html#cabinet",
+      "status": 200
+    },
+    {
+      "path": "/legal/policy/index.html",
+      "status": 200
+    },
+    {
+      "path": "/kontakty/index.html#feedback",
+      "status": 200
+    },
+    {
+      "path": "/legal/approval/index.html",
+      "status": 200
+    },
+    {
+      "path": "/napravleniya/#content",
+      "status": 200
+    },
+    {
+      "path": "/raspisanie/#content",
+      "status": 200
+    },
+    {
+      "path": "/stoimost/#content",
+      "status": 200
+    },
+    {
+      "path": "/komanda/#content",
+      "status": 200
+    },
+    {
+      "path": "/faq/#content",
+      "status": 200
+    },
+    {
+      "path": "/sertifikaty/#content",
+      "status": 200
+    },
+    {
+      "path": "/kontakty/#content",
+      "status": 200
+    }
+  ],
+  "pageMeta": [
+    {
+      "page": "/",
+      "title": "Главная — HomePilates",
+      "description": "Улучшаем осанку, снимаем боль в спине и шее, возвращаем легкость движения. Мини-группы до 7 человек и персональные тренировки в студии у м. Ботанический сад.",
+      "fonts": [
+        true,
+        true
+      ]
+    },
+    {
+      "page": "napravleniya",
+      "title": "Направления — HomePilates",
+      "description": "У нас нет случайных занятий. Каждое направление решает конкретную задачу — от реабилитации до гибкости. Не знаете, с чего начать? Приходите на пробное занятие: тренер определит отправную точку и подскажет маршрут.",
+      "fonts": [
+        true,
+        true
+      ]
+    },
+    {
+      "page": "raspisanie",
+      "title": "Расписание — HomePilates",
+      "description": "Выбирайте удобное время – запись занимает минуту. В таблице ниже актуальное расписание студии. Записывайтесь сами или меняйте запись в личном кабинете – без звонков и переписок.",
+      "fonts": [
+        true,
+        true
+      ]
+    },
+    {
+      "page": "stoimost",
+      "title": "Стоимость — HomePilates",
+      "description": "Прозрачные цены – без скрытых условий. Пробное занятие – самый выгодный способ начать: после него вы получаете персональный план занятий по приятной стоимости.",
+      "fonts": [
+        true,
+        true
+      ]
+    },
+    {
+      "page": "komanda",
+      "title": "Команда — HomePilates",
+      "description": "Нас немного – и это дарит нам уверенность. Вместо большой команды со сменными тренерами у нас пять специалистов, которые ведут вас от первой консультации до результата. Вы не будете каждый раз рассказывать свою историю заново.",
+      "fonts": [
+        true,
+        true
+      ]
+    },
+    {
+      "page": "faq",
+      "title": "FAQ — HomePilates",
+      "description": "Отвечаем на вопросы, которые чаще всего приходят в личные сообщения.",
+      "fonts": [
+        true,
+        true
+      ]
+    },
+    {
+      "page": "sertifikaty",
+      "title": "Подарочные сертификаты — HomePilates",
+      "description": "Подарок, который не пылится в шкафу. Сертификат HomePilates на 1, 2, 3 тренировки это не абстрактная косметичка, а реальные тренировки, после которых человек встает с кровати без боли в спине. Подойдет маме, которая забыла о себе после родов, другу с «офисной» спиной, партнеру, который все собирается заняться собой.",
+      "fonts": [
+        true,
+        true
+      ]
+    },
+    {
+      "page": "kontakty",
+      "title": "Контакты — HomePilates",
+      "description": "Москва, проезд Серебрякова, д. 2 к.1, 2 минуты от м. Ботанический сад.",
+      "fonts": [
+        true,
+        true
+      ]
+    }
+  ],
+  "offline": [
+    {
+      "route": "/",
+      "title": "Главная — HomePilates"
+    },
+    {
+      "route": "napravleniya",
+      "title": "Направления — HomePilates"
+    },
+    {
+      "route": "raspisanie",
+      "title": "Расписание — HomePilates"
+    },
+    {
+      "route": "stoimost",
+      "title": "Стоимость — HomePilates"
+    },
+    {
+      "route": "komanda",
+      "title": "Команда — HomePilates"
+    },
+    {
+      "route": "faq",
+      "title": "FAQ — HomePilates"
+    },
+    {
+      "route": "sertifikaty",
+      "title": "Подарочные сертификаты — HomePilates"
+    },
+    {
+      "route": "kontakty",
+      "title": "Контакты — HomePilates"
+    }
+  ],
+  "requestErrors": [],
+  "browserErrors": [],
+  "browser": "156.0.8078.74",
+  "phoneCta": {
+    "bottom": 539.328125,
+    "photoTop": 562.328125
+  },
+  "form": {
+    "requiredConsent": true,
+    "networkRequests": 0,
+    "status": "Сообщение осталось в прототипе. Для отправки требуется подключить форму к студии."
+  },
+  "cookies": "Accepted, persisted, reopened and withdrawn; no tracker configured for classes",
+  "schedule": "Confirmed club URL inserted by explicit action; frame is read-only; external contents unverified."
+}

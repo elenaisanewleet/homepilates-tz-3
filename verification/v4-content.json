@@ -1,0 +1,52 @@
+{
+  "review/site/faq/index.html": {
+    "paragraphs": 9,
+    "priceFields": 0,
+    "linkTargets": 16
+  },
+  "review/site/index.html": {
+    "paragraphs": 6,
+    "priceFields": 0,
+    "linkTargets": 17
+  },
+  "review/site/komanda/index.html": {
+    "paragraphs": 14,
+    "priceFields": 0,
+    "linkTargets": 16
+  },
+  "review/site/kontakty/index.html": {
+    "paragraphs": 7,
+    "priceFields": 0,
+    "linkTargets": 21
+  },
+  "review/site/legal/approval/index.html": {
+    "paragraphs": 4,
+    "priceFields": 0,
+    "linkTargets": 1
+  },
+  "review/site/legal/policy/index.html": {
+    "paragraphs": 136,
+    "priceFields": 0,
+    "linkTargets": 1
+  },
+  "review/site/napravleniya/index.html": {
+    "paragraphs": 6,
+    "priceFields": 0,
+    "linkTargets": 16
+  },
+  "review/site/raspisanie/index.html": {
+    "paragraphs": 3,
+    "priceFields": 0,
+    "linkTargets": 16
+  },
+  "review/site/sertifikaty/index.html": {
+    "paragraphs": 3,
+    "priceFields": 0,
+    "linkTargets": 16
+  },
+  "review/site/stoimost/index.html": {
+    "paragraphs": 2,
+    "priceFields": 147,
+    "linkTargets": 16
+  }
+}

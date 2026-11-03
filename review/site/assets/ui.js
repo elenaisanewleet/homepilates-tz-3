@@ -1,22 +1,30 @@
 (() => {
   const menuButton = document.querySelector('.burger');
   const menu = document.querySelector('#sections');
-  function showMenu(open, focusButton = false) {
-    menuButton.setAttribute('aria-expanded', String(open));
-    menu.classList.toggle('open', open);
-    if (focusButton) menuButton.focus();
-  }
+  const closeMenu = () => menu.close();
   menuButton.addEventListener('click', () => {
-    const open = !menu.classList.contains('open');
-    showMenu(open);
-    if (open) menu.querySelector('a').focus();
+    if (menu.open) return;
+    menu.showModal();
+    menuButton.setAttribute('aria-expanded', 'true');
+    document.documentElement.classList.add('menu-open');
   });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && menu.classList.contains('open')) showMenu(false, true);
+  menu.querySelector('.drawer-close').addEventListener('click', closeMenu);
+  menu.addEventListener('click', event => {
+    if (event.target.closest('a')) closeMenu();
+    if (event.target !== menu) return;
+    const rect = menu.getBoundingClientRect();
+    if (event.clientX < rect.left || event.clientX > rect.right ||
+        event.clientY < rect.top || event.clientY > rect.bottom) closeMenu();
   });
-  document.addEventListener('click', e => {
-    if (!e.target.closest('.bar') || e.target.closest('.nav a')) showMenu(false);
+  menu.addEventListener('close', () => {
+    menuButton.setAttribute('aria-expanded', 'false');
+    document.documentElement.classList.remove('menu-open');
   });
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', event => {
+    if (event.matches && menu.open) closeMenu();
+  });
+  window.addEventListener('pagehide', () => { if (menu.open) closeMenu(); });
+
   const slides = Array.from(document.querySelectorAll('[data-slide]'));
   if (slides.length) {
     let active = 0;

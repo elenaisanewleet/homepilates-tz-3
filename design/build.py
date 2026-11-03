@@ -29,8 +29,25 @@ PHOTOMAP = {
     "cadillac-pair-stretch": ("3761_krasivyj-trener-pomo.png", "Растяжка с ремнями на оборудовании студии"),
 }
 DASH = '<span class="dot" aria-hidden="true"></span>'
-ARROW = '<span aria-hidden="true">↗</span>'
-NEXT = '<span aria-hidden="true">→</span>'
+ICON_PATHS = {
+    "next": "M4 12h15m-6-6 6 6-6 6",
+    "prev": "M20 12H5m6 6-6-6 6-6",
+    "out": "M6 18 18 6M7 6h11v11",
+    "menu": "M4 8h16M8 16h12",
+    "close": "m6 6 12 12M18 6 6 18",
+    "account": "M16 8a4 4 0 1 1-8 0 4 4 0 1 1 8 0M4 21v-2a8 6 0 0 1 16 0v2",
+    "pin": "M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0ZM14.3 10a2.3 2.3 0 1 1-4.6 0 2.3 2.3 0 0 1 4.6 0Z",
+}
+
+
+def icon(name):
+    return (f'<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" '
+            f'fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" '
+            f'stroke-linejoin="round"><path d="{ICON_PATHS[name]}"/></svg>')
+
+
+ARROW = icon("out")
+NEXT = icon("next")
 
 
 def link(href, label, cls="", decoration=""):
@@ -59,13 +76,20 @@ class Page(base.Page):
             label = "Сертификаты" if slug == "sertifikaty" and cls == "nav" else title
             current = ' aria-current="page"' if slug == self.slug else ""
             items.append(f'<a href="{self.link(slug)}"{current} aria-label="{title}">{label}</a>')
-        return f'<nav class="{cls}" aria-label="{"Основное меню" if cls == "nav" else "Разделы в подвале"}">' + "".join(items) + '</nav>'
+        return f'<nav class="{cls}" aria-label="{"Основное меню" if cls != "footnav" else "Разделы в подвале"}">' + "".join(items) + '</nav>'
 
     def header(self):
+        cabinet = self.link("", "#cabinet")
         return (f'<a class="skip" href="#content">К содержанию</a><header class="bar"><div class="wrap bar-inner">'
-                f'{self.brand()}<button class="burger" type="button" aria-expanded="false" aria-controls="sections" '
-                f'aria-label="Меню"><i></i><i></i></button><div id="sections">{self.menu("nav")}</div>'
-                f'{link(self.link("", "#cabinet"), L["account"], "cab", ARROW)}</div></header>')
+                f'{self.brand()}{self.menu("nav")}<a class="cab" href="{cabinet}" aria-label="{L["account"]}">'
+                f'{icon("account")}<span class="cab-wide">{L["account"]}</span><span class="cab-short">Кабинет</span></a>'
+                f'<button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" '
+                f'aria-haspopup="dialog" aria-controls="sections">{icon("menu")}</button></div></header>'
+                f'<dialog id="sections" class="menu-drawer" aria-labelledby="menu-title">'
+                f'<div class="drawer-head"><h2 id="menu-title">Меню</h2><button type="button" '
+                f'class="drawer-close" aria-label="Закрыть меню" autofocus>{icon("close")}</button></div>'
+                f'{self.menu("drawer-links")}<a class="drawer-account" href="{cabinet}">'
+                f'{icon("account")}{L["account"]}</a></dialog>')
 
     def action(self, target="raspisanie", label=None, anchor=""):
         return link(self.link(target, anchor), label or L["book"], "action", NEXT)
@@ -118,26 +142,34 @@ def external_panel(title, message, button, url, readonly=False):
 def home(pg):
     h = D["home"]
     first, last = h["title"].split(" — ",1)
+    lead, separator, before_dash = first.rpartition(" ")
     nav = "".join(link(pg.link(slug), title, "tile", ARROW) for slug,title in D["pages"].items() if slug)
     org = D["integrations"]["organization"]
     images = "".join(f'<div data-slide {"" if n == 0 else "hidden"}>{pg.photo(name,priority=n==0)}</div>' for n,name in enumerate(("studio","stretch","group")))
     return f"""
 <section class="hero"><div class="wrap hero-grid">
-  <div class="hero-copy"><span class="place">{DASH}{L["brandPlace"]}</span>
-    <h1>{first} — <em>{last}</em></h1><p>{h["intro"]}</p><p class="trial">{h["trial"]}</p>
+  <div class="hero-copy"><span class="place">{icon("pin")}{L["brandPlace"]}</span>
+    <h1>{escape(lead)}{separator}<span class="keep">{escape(before_dash)} —</span> <em>{escape(last)}</em></h1><p>{h["intro"]}</p><p class="trial">{h["trial"]}</p>
     <div class="actions">{pg.action()}{link(pg.link("stoimost"),"Стоимость","secondary",ARROW)}</div></div>
   <figure class="studio-photo"><div class="frames">{images}</div>
     <figcaption><span class="photo-label"><i></i>HomePilates</span>
-      <span class="gallery-controls"><button data-prev aria-label="Предыдущее фото">←</button>
-      <span data-count aria-live="polite">01 / 03</span><button data-next aria-label="Следующее фото">→</button></span></figcaption>
+      <span class="gallery-controls"><button data-prev aria-label="Предыдущее фото">{icon("prev")}</button>
+      <span data-count aria-live="polite">01 / 03</span><button data-next aria-label="Следующее фото">{icon("next")}</button></span></figcaption>
   </figure></div></section>
-<section class="band wrap split"><div class="section-head"><span class="index">01</span><h2>{h["whyTitle"]}</h2></div><div>{base.p(h["why"])}</div></section>
-<section class="wash"><div class="band wrap split"><figure>{pg.photo("reformer-trainer-assist")}</figure><div><span class="index">02</span><h2>{h["whoTitle"]}</h2>{base.listing(h["who"])}</div></div></section>
-<section class="band wrap split"><div><span class="index">03</span><h2>{h["lessonTitle"]}</h2>{base.p(h["lesson"])}</div>{base.listing(h["steps"],True)}</section>
+<section class="band wrap atlas" aria-labelledby="why-title">
+  <div class="atlas-copy"><div class="plate-index">Атлас движения <span>01 / 03</span></div>
+    <h2 id="why-title">{h["whyTitle"]}</h2>{base.p(h["why"])}</div>
+  <figure class="plate"><div class="plate-heading"><span>Реформер</span><span>Фиг. 01</span></div>
+    <img src="{pg.assets}/reformer.svg" width="670" height="376" loading="lazy"
+         alt="Реформер в перспективе. Выноски указывают на каретку, упор и ремни.">
+    <figcaption><span><b>01</b> Каретка</span><span><b>02</b> Упор</span><span><b>03</b> Ремни</span></figcaption>
+  </figure></section>
+<section class="wash audience"><div class="band wrap split"><figure>{pg.photo("reformer-trainer-assist")}</figure><div><span class="index">02</span><h2>{h["whoTitle"]}</h2>{base.listing(h["who"])}</div></div></section>
+<section class="band wrap split lesson"><div><span class="index">03</span><h2>{h["lessonTitle"]}</h2>{base.p(h["lesson"])}</div>{base.listing(h["steps"],True)}</section>
 <div class="quote"><div class="wrap"><blockquote>{h["quote"]}</blockquote><cite>{h["author"]}</cite></div></div>
 <section class="band wrap split"><div><h2>{L["reviews"]}</h2>{link(D["integrations"]["map"]+"reviews/", L["maps"],"under",ARROW)}</div>{external_panel("Отзывы студии","Отзывы загружаются с Яндекс Карт.","Показать отзывы","https://yandex.ru/maps-reviews-widget/"+org+"?comments")}</section>
 <nav class="band wrap tilelinks" aria-label="Разделы сайта">{nav}</nav>
-<section id="cabinet" class="wash"><div class="band wrap split"><h2>{h["cta"]}</h2>{pg.widget("personal",L["account"])}</div></section>"""
+<section id="cabinet" class="cabinet-panel"><div class="band wrap split"><h2>{h["cta"]}</h2>{pg.widget("personal",L["account"])}</div></section>"""
 
 
 def prices(pg):
@@ -217,7 +249,8 @@ def build():
     for name in sorted({p[0] for p in PHOTOMAP.values()}):
         subprocess.run(["cwebp","-quiet","-q","83",str(PHOTOS/name),"-o",str(ASSETS/(Path(name).stem+".webp"))],check=True)
     (ASSETS/"style.css").write_text((ROOT/"tools/fonts.css").read_text().replace("__ASSETS__", ".") + (PACK/"design/style.css").read_text())
-    shutil.copy(PACK/"design/ui.js", ASSETS/"ui.js")
+    for asset in ("ui.js", "reformer.svg"):
+        shutil.copy(PACK / "design" / asset, ASSETS / asset)
     pages = {**base.PAGES,"":home,"stoimost":prices,"komanda":team,"kontakty":contacts}
     for slug,renderer in pages.items():
         pg = Page(slug)
